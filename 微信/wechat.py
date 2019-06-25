@@ -3,7 +3,7 @@
 #!/bin/python 
 import urllib,urllib2,json
 import sys
-params = {'corpid':'wwe0e6037b5802540e', 'corpsecret':'DeM0To1x1ZuMSdhk8griJnIeZDrlurUOZv-ePPS7cPU'}
+params = {'corpid':'wwe0e6037b5802540a', 'corpsecret':'DeM0To1x1ZuMSdhk8griJnIeZDrlurUOZv-ePPS7cPH'}
 data = urllib.urlencode(params)
 url = 'https://qyapi.weixin.qq.com/cgi-bin' + '/' + 'gettoken?'
 response = urllib2.Request(url + data)
