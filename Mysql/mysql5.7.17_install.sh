@@ -13,6 +13,8 @@ userdel -r -f mysql
 groupadd mysql
 useradd -r -s /sbin/nologin -g mysql mysql
 chown -R mysql.mysql ./
+chown -R mysql /var/run/mysqld
+chgrp -R mysql /var/run/mysqld
 ./bin/mysqld --initialize-insecure --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
 /bin/cp -f support-files/mysql.server /etc/init.d/mysqld
 /bin/cp -f support-files/my-default.cnf /etc/my.cnf
