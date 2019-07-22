@@ -1,6 +1,6 @@
 #!/bin/python
 # 2019-07-01
-# zhutongcloud
+# jiangnan
 import requests,json,time
 url_quizii = {"公网xxx":['http://www.xxx.com/xxx/login',{'j_username': 'xxxx' , 'j_password': 'xxxxxxx'},'http://www.quizii.com/quizii/student#profile']}
 def wechat(data):
@@ -26,34 +26,57 @@ class Login(object):
         a=a.find('词汇记忆')
         return (a)
 def main():
-  ls=[]
-  current_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-  ls.append ("===英语quizii登陆检查=== " )
-  ls.append ("检查时间: %s" %current_time )
-  for i in url_quizii:
-    try:  
-      session = {}
-      login_test = Login(url_quizii[i][0],url_quizii[i][1],url_quizii[i][2])  
-      c=login_test.quizii_login()
-    except Exception as e:
-      ls.append ("%s:  Error" % i)
-      continue
-    if c != -1:
-      ls.append ("%s:  OK" % i)
-    else:
-      num = 0
-      while num < 5:
-        login_test = Login(url_quizii[i][0],url_quizii[i][1],url_quizii[i][2])                                                                                        
-        c=login_test.quizii_login()                                                                                                                                   
-        if c != -1:
-          out = "OK"                                                                                                                                                   
-          break
-        else:
-          num +=1
-          out = "Error"
-      ls.append ("%s:  %s(%s次检查结果)" %(i,out,num))
-  status = '\n'.join(ls)
-  print (status)
-  wechat(data=status)
+	ls=[]
+	for i in url_quizii:
+		try:	
+			session = {}
+			login_test = Login(url_quizii[i][0],url_quizii[i][1],url_quizii[i][2])	
+			c=login_test.quizii_login()
+		except Exception as e:
+			ls.append ("%s:  Error" % i)
+			continue
+		if c != -1:
+			ls.append ("%s:  OK" % i)
+		else:
+			num = 0
+			while num < 5:
+				login_test = Login(url_quizii[i][0],url_quizii[i][1],url_quizii[i][2])                                                                                        
+				c=login_test.quizii_login()                                                                                                                                   
+				if c != -1:
+					out = "OK"                                                                                                                                                   
+					break
+				else:
+					num +=1
+					out = "Error"
+			ls.append ("%s:  %s(%s次检查结果)" %(i,out,num))
+	for a in ls:
+		if a[-5:] == 'Error':
+			b = a.split(":")[0]
+			num = 0
+			while num < 5:
+				try:
+					session = {}
+					login_test = Login(url_quizii[b][0],url_quizii[b][1],url_quizii[b][2])
+					c = login_test.quizii_login()
+					if c != -1:
+						out = "OK"
+						break
+				except Exception as e:
+					num +=1
+					time.sleep (5)
+					out ="Error"
+			f="%s: %s(%s次检查结果)"  %(b,out,num)
+			suoyin= ls.index(a)
+			ls[suoyin]=f
+		else:
+			pass
+	current_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+	ls1=[]
+	ls1.append ("===英语quizii登陆检查=== " )
+	ls1.append ("检查时间: %s" %current_time )
+	ls1.extend(ls)
+	status = '\n'.join(ls1)
+	print(status)
+	wechat(data=status)
 if __name__=='__main__':
-  main()
+	main()
