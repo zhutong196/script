@@ -1,6 +1,6 @@
 #!/bin/python
 # 2019-07-01
-# zhutongcloud
+# jiangnan
 import requests,json,time
 url_mem={'公网xxx':'http://xxx.com/Mintel/servlet/getUserRecord?userId=demo'}
 def wechat(data):
