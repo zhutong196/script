@@ -87,12 +87,19 @@ mysql  -e "flush privileges"
 mysql -uroot -pquizii2016 -e "show databases"
 
 if [ $? -eq 0 ];then
-	echo "
-	mysql 5.7.17 安装成功
-	basedir=/usr/local/mysql 
-	datadir=/usr/local/mysql/data
-	user:root
-	passsword: quizii2016"
+echo "
++-------------------------------+
+|     mysql 5.7.17 安装成功      |
++-------------------------------+
+| basedir=/usr/local/mysql      | 
+| datadir=/usr/local/mysql/data |
+| user:root                     | 
+| passsword: quizii2016"        |         
++-------------------------------+
 else
-	echo "安装失败" 
+echo "
++-------------------------------+
+|     mysql 5.7.17 安装失败      |
++-------------------------------+
+" 
 fi
