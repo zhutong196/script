@@ -34,6 +34,7 @@ gtid_mode=ON
 enforce_gtid_consistency=1
 auto_increment_offset = 1 
 auto_increment_increment = 2 
+#skip-grant-tables
 
 slow_query_log=ON
 slow_query_log_file=/usr/local/mysql/data/slow.log
