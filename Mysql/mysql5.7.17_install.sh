@@ -27,7 +27,6 @@ cat << EOF > /etc/my.cnf
 # If you doesn't config master-slave of mysql,you have to comment out MTS setting
 # https://raw.githubusercontent.com/zhutongcloud
 
-
 [mysqld]
 log_bin
 server-id=1
