@@ -1,6 +1,6 @@
 #! /bin/bash
 #time 20190719
-#auth: zhuxijiang
+#auth: jiangnan
 #system: centos
 #mysql5.7 二进制安装单实例
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
@@ -23,7 +23,7 @@ chgrp -R mysql /var/run/mysqld
 
 cat << EOF > /etc/my.cnf  
 # For advice on how to change settings please see;
-# The mysql is be install by zhutong's script and this config-file must be adjust according to your linux-server config
+# The mysql is be install by jiangnan's script and this config-file must be adjust according to your linux-server config
 # If you doesn't config master-slave of mysql,you have to comment out MTS setting
 # https://raw.githubusercontent.com/zhutongcloud
 
