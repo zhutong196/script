@@ -94,7 +94,7 @@ echo "
 | basedir=/usr/local/mysql      | 
 | datadir=/usr/local/mysql/data |
 | user:root                     | 
-| passsword: quizii2016"        |         
+| passsword: quizii2016         |         
 +-------------------------------+
 "
 else
