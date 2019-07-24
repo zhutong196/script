@@ -3,6 +3,7 @@
 #auth: jiangnan
 #system: centos
 #mysql5.7 二进制安装单实例
+yum install -y wget
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
 	wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
 else
@@ -30,10 +31,10 @@ cat << EOF > /etc/my.cnf
 [mysqld]
 log_bin
 server-id=1
-gtid_mode=ON
-enforce_gtid_consistency=1
-auto_increment_offset = 1 
-auto_increment_increment = 2 
+#gtid_mode=ON
+#enforce_gtid_consistency=1
+#auto_increment_offset = 1 
+#auto_increment_increment = 2 
 #skip-grant-tables
 
 slow_query_log=ON
@@ -63,11 +64,11 @@ query_cache_type=1
 max_error_count=5000
 
 # slave 并行复制（mysql>5.7）
-slave-parallel-type=LOGICAL_CLOCK  #基于组提交的并行复制方式
-slave-parallel-workers=16
-master_info_repository=TABLE 
-relay_log_info_repository=TABLE
-relay_log_recovery=ON
+#slave-parallel-type=LOGICAL_CLOCK  #基于组提交的并行复制方式
+#slave-parallel-workers=16
+#master_info_repository=TABLE 
+#relay_log_info_repository=TABLE
+#relay_log_recovery=ON
 
 [client]
 socket=/tmp/mysql.sock
