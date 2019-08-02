@@ -46,7 +46,7 @@ datadir=/usr/local/mysql/data
 socket=/tmp/mysql.sock
 #log-error = /var/log/mysql/error.log
 
-innodb_buffer_pool_size = 8G
+innodb_buffer_pool_size = 1G
 innodb_buffer_pool_dump_pct = 40
 innodb_page_cleaners = 4
 innodb_undo_log_truncate = 1
