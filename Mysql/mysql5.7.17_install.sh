@@ -22,7 +22,7 @@ else
 fi
 sleep 3
 mv /usr/local/mysql-5.7.17-linux-glibc2.5-x86_64 /usr/local/mysql
-sudo rm -rf  mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+mv  mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz   /tmp/
 cd /usr/local/mysql
 userdel -r -f mysql
 groupadd mysql
