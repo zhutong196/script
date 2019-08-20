@@ -4,6 +4,7 @@
 #system: centos
 #mysql5.7 二进制安装单实例
 yum install -y wget
+cd /usr/local/
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
 	wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
 else
