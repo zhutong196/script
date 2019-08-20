@@ -12,6 +12,7 @@ else
 fi
 sleep 3
 mv /usr/local/mysql-5.7.17-linux-glibc2.5-x86_64 /usr/local/mysql
+sudo rm -rf  mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
 cd /usr/local/mysql
 userdel -r -f mysql
 groupadd mysql
@@ -58,11 +59,11 @@ show_compatibility_56=on
 symbolic-links=0
 character_set_server=utf8
 sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES  ## 第一个参数 指定引擎操作SQL语句，若该MySQL不支持此引擎则直接报错，不会替换成默认引擎执行；第二个严格检查SQL的正确性，若规定四个字符长度，插入6个会报错，不会自动截断。
-max_connections=5000
+max_connections=1000
 tmp_table_size=200M
 query_cache_size=64M
 query_cache_type=1
-max_error_count=5000
+max_error_count=1000
 
 # slave 并行复制（mysql>5.7）
 #slave-parallel-type=LOGICAL_CLOCK  #基于组提交的并行复制方式
