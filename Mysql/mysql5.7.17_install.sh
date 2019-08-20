@@ -3,6 +3,14 @@
 #auth: jiangnan
 #system: centos
 #mysql5.7 二进制安装单实例
+id=`id -u`
+echo $id
+if [ $id == '0' ];then
+    echo "Current user is ROOT"
+    else
+        echo 'This script is must ROOT running'
+        exit 1
+fi
 yum install -y wget
 cd /usr/local/
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
