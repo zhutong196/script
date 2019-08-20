@@ -12,7 +12,7 @@ if [ $id == '0' ];then
 fi
 yum install -y wget
 cd /usr/local/
-if [ ! -d mysql ];then
+if [  -d mysql ];then
    	mv mysql mysql`date +%Y-%m-%d_%H-%M-%S`.bak
 fi
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
