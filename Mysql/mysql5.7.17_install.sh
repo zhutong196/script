@@ -4,11 +4,10 @@
 #system: centos
 #mysql5.7 二进制安装单实例
 id=`id -u`
-echo $id
 if [ $id == '0' ];then
-    echo "Current user is ROOT"
+    echo "Current user is ROOT,this script will be running"
     else
-        echo 'This script is must ROOT running'
+        echo 'To running this script,you must be sudo ROOT'
         exit 1
 fi
 yum install -y wget
