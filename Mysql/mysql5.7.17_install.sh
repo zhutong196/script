@@ -7,7 +7,7 @@ id=`id -u`
 if [ $id == '0' ];then
     echo "Current user is ROOT,this script will be running"
     else
-        echo 'To running this script,you must be sudo ROOT'
+        echo 'ERROR: To running this script,you must be sudo ROOT'
         exit 1
 fi
 yum install -y wget
