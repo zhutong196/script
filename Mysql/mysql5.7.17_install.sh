@@ -13,7 +13,7 @@ fi
 yum install -y wget
 cd /usr/local/
 if [  -d mysql ];then
-   	mv mysql mysql`date +%Y-%m-%d_%H-%M-%S`.bak
+   	mv mysql mysql_`date +%Y-%m-%d`.bak
 fi
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
 	wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
