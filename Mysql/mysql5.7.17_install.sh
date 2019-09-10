@@ -10,7 +10,7 @@ if [ $id == '0' ];then
         echo 'ERROR: To running this script,you must be sudo ROOT'
         exit 1
 fi
-yum install -y wget
+yum install -y wget  ncurses-devel libaio-devel 
 cd /usr/local/
 if [  -d mysql ];then
    	mv mysql mysql_`date +%Y-%m-%d`.bak
