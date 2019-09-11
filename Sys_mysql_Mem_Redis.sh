@@ -7,7 +7,7 @@
 
 
 
-def system_init(){
+system_init(){
 # 配置yum源
 mkdir /etc/yum.repos.d/bak
 mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/bak
@@ -148,7 +148,7 @@ reboot
 # 清空/etc/issue, 去除系统及内核版本登录前的屏幕显示
 }
 
-def mysql_install(){
+mysql_install(){
 
 id=`id -u`
 if [ $id == '0' ];then
@@ -267,7 +267,7 @@ echo "
 fi
 
 
-def memcached_install(){
+memcached_install(){
 
 yum install -y wget   gcc-c++ gcc make cmake autoconf libtool losf 
 
@@ -304,7 +304,7 @@ lsof -i:11211
 
 }
 
-def redis_install(){
+redis_install(){
 yum -y install gcc-c++ wget  gcc make cmake lsof 
 
 cd /usr/local/
