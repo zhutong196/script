@@ -365,18 +365,18 @@ read -t 60 -p "Please enter the installation number :" a
   2)
  echo "
  |===================**Make Install Mysql-5.7.17**=======================|"
-install_mysql && echo "5s后返回首页.." && DJS
+  mysql_install
  ;;
  3)
  echo "
  |===================**Make Install Memcached**==========================|"
- install_lnmt
+ memcached_install
  ;;
 
  4)
  echo "
  |===================**Make Install Redis**==============================|"
- install_lnmt
+ redis_install
  ;;
   *|5)
  echo "exit,please reexecute."
