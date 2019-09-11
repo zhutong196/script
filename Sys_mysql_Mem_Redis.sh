@@ -321,13 +321,13 @@ sleep 1
 lsof -i:6379
 sleep 2
 
-echo "
+cat << END
 ===================================================================================
 ReadMe:
 设置密码：     vim /usr/local/redis/redis.conf  [requirepass quizii2019(500行左右)]\n
 使用密码登录： /usr/local/redis/bin/redis-cli  -a quizii2019
-"
-
+END
+}
 
 menu(){
 #clear
