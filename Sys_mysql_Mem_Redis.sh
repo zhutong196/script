@@ -304,7 +304,6 @@ lsof -i:11211
 redis_install(){
 
 yum -y install gcc-c++ wget  gcc make cmake lsof 
-
 cd /usr/local/
 wget http://download.redis.io/releases/redis-4.0.11.tar.gz
 tar xzvf redis-4.0.11.tar.gz
@@ -322,12 +321,12 @@ sleep 1
 lsof -i:6379
 sleep 2
 
-cat << END
+echo "
 ===================================================================================
 ReadMe:
 设置密码：     vim /usr/local/redis/redis.conf  [requirepass quizii2019(500行左右)]\n
 使用密码登录： /usr/local/redis/bin/redis-cli  -a quizii2019
-END
+"
 
 
 menu(){
