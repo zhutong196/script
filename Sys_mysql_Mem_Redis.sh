@@ -296,7 +296,7 @@ sleep 2
 
 ln -s /usr/local/memcached/bin/memcached /usr/sbin/memcached
 memcached -d -m 1024 -u root -U 0 -l 127.0.0.1 -p 11211 -c 1000 -P /tmp/memcached.pid
-          后台 内存    用户   udp关闭 指定访问ip  监听tcp端口 最大连接数  写入file 使得后边进行快速进程终止 kill -9 `cat /tmp/memcached.pid`
+#          后台 内存    用户   udp关闭 指定访问ip  监听tcp端口 最大连接数  写入file 使得后边进行快速进程终止 kill -9 `cat /tmp/memcached.pid`
 ps -ef|grep memcached
 lsof -i:11211
 
