@@ -163,6 +163,7 @@ if [  -d mysql ];then
 fi
 if [ ! -f mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz ];then
 	wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+	tar xvf mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz -C /usr/local
 else
 	tar xvf mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz -C /usr/local
 fi
