@@ -2,7 +2,7 @@
 # auther: zxj
 # time:2019-05-08
 # system: centos
-# 系统基础服务脚本
+# 系统批量安装服务脚本
 ######################
 
 system_init(){
@@ -141,7 +141,11 @@ systemctl restart sshd
 # chkconfig zabbix-agent on
 
 
-reboot
+echo "
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+请执行reboot 完成系统初始化       
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 # 清空/etc/issue, 去除系统及内核版本登录前的屏幕显示
 }
 
