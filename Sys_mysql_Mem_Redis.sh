@@ -336,7 +336,7 @@ cat << END
                   ___________________________________   
                  |https://blog.csdn.net/zhutongcloud|
                     |\_________JingNan _________/|
-                    | ** (1).[System init   ] ** |
+                    | ** (1).[System  Init  ] ** |
                     | ** (2).[install Mysql ] ** |
                     | ** (3).[install Memcached]*|
                     | ** (4).[install Redis ] ** |
