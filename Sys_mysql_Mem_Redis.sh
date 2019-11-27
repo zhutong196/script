@@ -339,7 +339,7 @@ menu(){
 cat << END
                   ___________________________________   
                  |https://blog.csdn.net/zhutongcloud|
-                    |\_________JingNan _________/|
+                    |\_________JiangNan _________/|
                     | ** (1).[System  Init  ] ** |
                     | ** (2).[install Mysql ] ** |
                     | ** (3).[install Memcached]*|
@@ -382,6 +382,7 @@ read -t 60 -p "Please enter the installation number :" a
  ;;
   *|5)
  echo "exit,please reexecute."
+ source /etc/profile
  exit
  ;;
  esac
